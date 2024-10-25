@@ -40,7 +40,9 @@ p {
     display: flex;
     justify-content: center; /* Align horizontal */
     align-content: center; /* Align vertical */
+    align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 /* Rotated and animated background */
