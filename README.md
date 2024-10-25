@@ -55,3 +55,4 @@ This background was created as a birthday gift at [Wikidata's 12th birthday](htt
 ## Copyright and License
 
 Code released under [CC 0](https://github.com/ainali/wikidata-animated-background/main/LICENSE) license.
+The logo pattern is derived from [Wikidata-logo-without-paddings.svg](https://commons.wikimedia.org/wiki/File:Wikidata-logo-without-paddings.svg).
