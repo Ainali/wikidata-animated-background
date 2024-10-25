@@ -29,6 +29,10 @@ p {
     padding: 5px;
 }
 
+a {
+    z-index: 1; /* Set z-index higher to keep the content above the background */
+}
+
 /* Container for the animated background */
 .background-container {
     position: relative;
