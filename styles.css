@@ -1,0 +1,90 @@
+/* Basic page reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    position: relative; /* Add relative positioning to body for z-index control */
+}
+
+/* Style for the content */
+h1 {
+    position: relative; /* Ensure this is above the background */
+    z-index: 1; /* Set z-index higher to keep the content above the background */
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+    background-color: rgba(255, 255, 255, 0.7); /* Translucent background to make text easier to read */
+    border-radius: 20px;
+}
+
+p {
+    position: relative; /* Ensure this is above the background */
+    z-index: 1; /* Set z-index higher to keep the content above the background */
+    padding: 5px;
+}
+
+/* Container for the animated background */
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+    background-color: white; /* You can change the background color if needed */
+    z-index: -1; /* Set z-index to a lower value to push it behind content */
+    display: flex;
+    justify-content: center; /* Align horizontal */
+    align-content: center; /* Align vertical */
+    flex-wrap: wrap;
+}
+
+/* Rotated and animated background */
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 400%;
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221.2%22%20viewBox%3D%220%200%20810%20500%22%3E%3Cpath%20d%3D%22M%200%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%2060%2C0%20h%2090%20v%20500%20h%20-90%20z%20M%20180%2C0%20h%2090%20v%20500%20h%20-90%20z%22%20style%3D%22fill%3A%23900%22/%3E%3Cpath%20d%3D%22M%20300%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20360%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20720%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20780%2C0%20h%2030%20v%20500%20h%20-30%20z%22%20style%3D%22fill%3A%23396%22/%3E%3Cpath%20d%3D%22M%20420%2C0%20h%2090%20v%20500%20h%20-90%20z%20M%20540%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20600%2C0%20h%2090%20v%20500%20h%20-90%20z%22%20style%3D%22fill%3A%23069%22/%3E%3C/svg%3E');
+    background-size: 50%; /* Adjust the size of the logo as needed */
+    background-repeat: repeat; /* Seamlessly repeat the background */
+    background-position: 0 0;
+    transform: translateX(-30%) rotate(45deg); /* Rotate the entire background by 45 degrees and move to fit */
+    animation: scrollBackground 30s linear infinite; /* Infinite scroll animation */
+    opacity: 1; /* Change to a value between 0 and 1 if you want the logo less prominent */
+}
+
+/* Keyframes for smooth scrolling effect */
+@keyframes scrollBackground {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0; /* Move the background horizontally */
+    }
+}
+
+
+/* Media query for screens narrower than 1000px */
+@media (max-width: 1000px) {
+    .background-container::before {
+        content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+    height: 500%;
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221.2%22%20viewBox%3D%220%200%20810%20500%22%3E%3Cpath%20d%3D%22M%200%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%2060%2C0%20h%2090%20v%20500%20h%20-90%20z%20M%20180%2C0%20h%2090%20v%20500%20h%20-90%20z%22%20style%3D%22fill%3A%23900%22/%3E%3Cpath%20d%3D%22M%20300%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20360%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20720%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20780%2C0%20h%2030%20v%20500%20h%20-30%20z%22%20style%3D%22fill%3A%23396%22/%3E%3Cpath%20d%3D%22M%20420%2C0%20h%2090%20v%20500%20h%20-90%20z%20M%20540%2C0%20h%2030%20v%20500%20h%20-30%20z%20M%20600%2C0%20h%2090%20v%20500%20h%20-90%20z%22%20style%3D%22fill%3A%23069%22/%3E%3C/svg%3E');
+    background-size: 50%; /* Adjust the size of the logo as needed */
+    background-repeat: repeat; /* Seamlessly repeat the background */
+    background-position: 0 0;
+    transform: translateX(-80%) translateY(-40%) rotate(45deg); /* Rotate the entire background by 45 degrees and move to fit */
+    animation: scrollBackground 30s linear infinite; /* Infinite scroll animation */
+    }
+}
