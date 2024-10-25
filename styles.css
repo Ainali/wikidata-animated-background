@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    z-index: 1; /* Set z-index higher to keep the content above the background */
 }
 
 html, body {
@@ -14,7 +15,6 @@ html, body {
 /* Style for the content */
 h1 {
     position: relative; /* Ensure this is above the background */
-    z-index: 1; /* Set z-index higher to keep the content above the background */
     color: black;
     text-align: center;
     padding: 20px;
@@ -25,12 +25,7 @@ h1 {
 
 p {
     position: relative; /* Ensure this is above the background */
-    z-index: 1; /* Set z-index higher to keep the content above the background */
     padding: 5px;
-}
-
-a {
-    z-index: 1; /* Set z-index higher to keep the content above the background */
 }
 
 /* Container for the animated background */
